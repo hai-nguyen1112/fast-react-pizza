@@ -5,6 +5,7 @@ import Cart from './features/cart/Cart';
 import CreateOrder from './features/order/CreateOrder';
 import Order from './features/order/Order';
 import AppLayout from './ui/AppLayout';
+import { loader as menuLoader } from './features/menu/menuLoader';
 
 const router = createBrowserRouter([
   // AppLayout wraps around the child components
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
       {
         path: '/menu',
         element: <Menu />,
+        loader: menuLoader,
       },
       {
         path: '/cart',
