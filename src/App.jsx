@@ -6,11 +6,13 @@ import CreateOrder from './features/order/CreateOrder';
 import Order from './features/order/Order';
 import AppLayout from './ui/AppLayout';
 import { loader as menuLoader } from './features/menu/menuLoader';
+import Error from './ui/Error';
 
 const router = createBrowserRouter([
   // AppLayout wraps around the child components
   {
     element: <AppLayout />,
+    errorElement: <Error />,
     children: [
       {
         path: '/',
@@ -19,6 +21,7 @@ const router = createBrowserRouter([
       {
         path: '/menu',
         element: <Menu />,
+        errorElement: <Error />,
         loader: menuLoader,
       },
       {
