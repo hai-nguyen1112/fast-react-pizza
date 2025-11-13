@@ -8,6 +8,7 @@ import AppLayout from './ui/AppLayout';
 import { loader as menuLoader } from './features/menu/menuLoader';
 import Error from './ui/Error';
 import { loader as orderLoader } from './features/order/orderLoader';
+import { action as createOrderAction } from './features/order/createOrderAction';
 
 const router = createBrowserRouter([
   // AppLayout wraps around the child components
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
       {
         path: '/order/new',
         element: <CreateOrder />,
+        action: createOrderAction,
       },
       {
         path: '/order/:orderId',
