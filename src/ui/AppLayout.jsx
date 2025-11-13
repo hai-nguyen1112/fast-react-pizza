@@ -7,13 +7,16 @@ function AppLayout() {
   const navigation = useNavigation();
   const isLoading = navigation.state === 'loading';
   return (
-    <div className="layout">
+    <div className="grid h-screen grid-rows-[auto_1fr_auto]">
       {isLoading && <Loader />}
       <Header />
-      <main>
-        {/* The Outlet component represents the child component that is wrapped inside AppLayout */}
-        <Outlet />
-      </main>
+      <div>
+        <main className="mx-auto max-w-3xl">
+          {/* The Outlet component represents the child component that is wrapped inside AppLayout */}
+          <Outlet />
+        </main>
+      </div>
+
       <CartOverview />
     </div>
   );
