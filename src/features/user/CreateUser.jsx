@@ -23,7 +23,9 @@ function CreateUser() {
       />
 
       <div>
-        <Button disabled={!username.length}>Start ordering</Button>
+        <Button type="primary" disabled={!username.length}>
+          Start ordering
+        </Button>
       </div>
     </form>
   );
