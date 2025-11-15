@@ -24,7 +24,7 @@ function Cart() {
         ))}
       </ul>
 
-      <div className="mt-6 space-x-2">
+      <div className="mt-6 flex flex-col items-center gap-4 sm310:block sm310:space-x-2">
         <Button type="primary" to="/order/new">
           Order pizzas
         </Button>

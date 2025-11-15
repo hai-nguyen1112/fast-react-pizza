@@ -10,6 +10,7 @@ export default {
         screen: '100dvh',
       },
       screens: {
+        sm310: '310px',
         sm360: '360px',
         sm430: '430px',
       },
