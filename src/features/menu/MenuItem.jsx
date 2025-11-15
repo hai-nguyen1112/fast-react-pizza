@@ -7,7 +7,7 @@ import UpdateItemQuantity from '../cart/UpdateItemQuantity';
 
 function MenuItem({ pizza }) {
   const dispatch = useDispatch();
-  const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
+  const { id, name, unitPrice, ingredients, soldOut, pizzaImage } = pizza;
   const currentQuantity = useSelector(getCurrentQuantityById(id));
 
   const isInCart = currentQuantity > 0;
@@ -24,11 +24,11 @@ function MenuItem({ pizza }) {
   }
 
   return (
-    <li className="flex gap-4 py-2">
+    <li className="flex flex-col gap-1 py-2 sm360:flex-row sm360:gap-4">
       <img
-        src={imageUrl}
+        src={pizzaImage}
         alt={name}
-        className={`h-24 ${soldOut ? 'opacity-70 grayscale' : ''}`}
+        className={`h-24 w-24 ${soldOut ? 'opacity-70 grayscale' : ''}`}
       />
       <div className="flex grow flex-col pt-0.5">
         <p className="font-medium">{name}</p>
