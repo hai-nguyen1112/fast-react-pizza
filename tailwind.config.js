@@ -9,6 +9,9 @@ export default {
       height: {
         screen: '100dvh',
       },
+      screens: {
+        sm430: '430px',
+      },
     },
   },
   plugins: [],
