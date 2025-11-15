@@ -9,6 +9,7 @@ import {
 import OrderItem from './OrderItem';
 import { useEffect } from 'react';
 import UpdateOrder from './UpdateOrder';
+import LinkButton from '../../ui/LinkButton';
 
 function Order() {
   const order = useLoaderData();
@@ -32,11 +33,12 @@ function Order() {
   const deliveryIn = calcMinutesLeft(estimatedDelivery);
 
   return (
-    <div className="space-y-8 px-4 py-6">
+    <div className="space-y-8 px-4 py-3">
+      <LinkButton to="/menu">&larr; Back to menu</LinkButton>
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 className="text-xl font-semibold">Order #{id} status</h2>
 
-        <div className="space-x-2">
+        <div className="flex flex-col items-start gap-2 sm310:block sm310:space-x-2">
           {priority && (
             <span className="rounded-full bg-red-500 px-3 py-1 text-sm font-semibold uppercase tracking-wide text-red-50">
               Priority
