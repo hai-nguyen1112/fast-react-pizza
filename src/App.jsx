@@ -9,6 +9,7 @@ import { loader as menuLoader } from './features/menu/menuLoader';
 import Error from './ui/Error';
 import { loader as orderLoader } from './features/order/orderLoader';
 import { action as createOrderAction } from './features/order/createOrderAction';
+import { action as updateOrderAction } from './features/order/updateOrderAction';
 
 const router = createBrowserRouter([
   // AppLayout wraps around the child components
@@ -40,6 +41,7 @@ const router = createBrowserRouter([
         element: <Order />,
         loader: orderLoader,
         errorElement: <Error />,
+        action: updateOrderAction,
       },
     ],
   },
