@@ -20,7 +20,7 @@ function Menu() {
   }
 
   return (
-    <ul className="divide-y divide-stone-200 px-2">
+    <ul className="mb-20 divide-y divide-stone-200 px-2">
       {menuCopy.map((pizza) => (
         <MenuItem pizza={pizza} key={pizza.id} />
       ))}
