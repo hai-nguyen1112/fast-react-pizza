@@ -1,5 +1,7 @@
-// import { redirect } from 'react-router-dom';
-// import { createOrder } from '../../services/apiRestaurant';
+import { redirect } from 'react-router-dom';
+import { createOrder } from '../../services/apiRestaurant';
+import store from '../../store';
+import { clearCart } from '../cart/cartSlice';
 
 export async function action({ request }) {
   const formData = await request.formData();
@@ -8,7 +10,7 @@ export async function action({ request }) {
   const order = {
     ...data,
     cart: JSON.parse(data.cart),
-    priority: data.priority === 'on',
+    priority: data.priority === 'true',
   };
 
   const errors = {};
@@ -18,11 +20,12 @@ export async function action({ request }) {
 
   if (Object.keys(errors).length > 0) return errors;
 
-  // const newOrder = await createOrder(order);
+  const newOrder = await createOrder(order);
 
-  // return redirect(`/order/${newOrder.id}`);
+  // Do NOT overuse this approach
+  store.dispatch(clearCart());
 
-  return null;
+  return redirect(`/order/${newOrder.id}`);
 }
 
 // https://uibakery.io/regex-library/phone-number
